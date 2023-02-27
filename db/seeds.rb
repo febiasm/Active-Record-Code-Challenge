@@ -19,7 +19,7 @@ user5 = User.create(name: "Tracey")
 
 review = Review.create(
   comment: "Awesome product!",
-  star_rating: 5,
+  star_rating: 1,
   product_id: product1.id,
   user_id: user1.id
 )

@@ -1,26 +1,32 @@
 class Product < ActiveRecord::Base
-  has_many :reviews
-  has_many :users, through: :reviews
+    # product reviews
+    has_many :reviews
+    # product users through reviews
+    has_many :users, through: :reviews
 
-  def leave_review(user, star_rating, comment)
-      Review.create(
-          comment: comment,
-          star_rating: star_rating,
-          product_id: self.id,
-          user_id: user.id
-      )
+    # review for a product
+    def leave_review(user, star_rating, comment)
+        Review.create(
+            comment: comment,
+            star_rating: star_rating,
+            product_id: self.id,
+            user_id: user.id
+        )
+    end
+
+    # A method for printing all reviews for a product
+    def print_all_reviews
+        # all reviews for this product
+        all_reviews = self.reviews
+        # Iterate over each review and print it
+        all_reviews.collect do |review|
+            review.print_review
+        end
+    end
+
+    # method for calculating the average star rating for a product
+    def average_rating
+        reviews.average(:star_rating)
+    end
 
   end
-
-  def print_all_reviews
-      all_reviews = self.reviews
-      all_reviews.collect do |review|
-          review.print_review
-      end
-  end
-
-  def average_rating
-      reviews.average(:star_rating)
-  end
-
-end
