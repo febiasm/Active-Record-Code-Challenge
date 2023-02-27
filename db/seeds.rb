@@ -11,11 +11,11 @@ product3= Product.create(name: "Sony PlayStation 5")
 product4= Product.create(name: "Bose QuietComfort Earbuds")
 product5= Product.create(name: "Louis Vuitton Horizon Soft Duffle 55")
 
-user1 = User.create(name: "levy")
-user2 = User.create(name: "niggo")
-user3 = User.create(name: "bichwa")
-user4 = User.create(name: "njiru")
-user5 = User.create(name: "muguro")
+user1 = User.create(name: "Trevor")
+user2 = User.create(name: "Febias")
+user3 = User.create(name: "Thiru")
+user4 = User.create(name: "Tiffany")
+user5 = User.create(name: "Tracey")
 
 review = Review.create(
   comment: "Awesome product!",
