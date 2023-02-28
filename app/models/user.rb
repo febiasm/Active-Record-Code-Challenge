@@ -11,9 +11,9 @@ class User < ActiveRecord::Base
       products.order("reviews.star_rating DESC").first
   end
 
-  # Removes all reviews by the user for a given product
+  # Removes all reviews for a given product
   def remove_reviews(product)
-      # Find all reviews by the user for the given product
+      # Find reviews by the user for the given product
       reviews.where(product_id: product.id).destroy_all
   end
 end
