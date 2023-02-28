@@ -18,7 +18,7 @@ class Product < ActiveRecord::Base
     def print_all_reviews
         # all reviews for this product
         all_reviews = self.reviews
-        # Iterate over each review and print it
+        # Iterate over each review and print 
         all_reviews.collect do |review|
             review.print_review
         end
